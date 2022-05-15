@@ -6,6 +6,8 @@ import time
 import hmac
 import hashlib
 import base64
+import time
+import hashlib
 import utils
 import urllib
 import urllib.parse
