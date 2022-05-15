@@ -7,6 +7,8 @@ import os
 import time
 import urllib
 import urllib.parse
+import time
+import hashlib
 from urllib.parse import urlencode
 
 import requests
@@ -142,6 +144,9 @@ class WoZaiXiaoYuanPuncher:
             "city": os.environ["WZXY_CITY"],
             "district": os.environ["WZXY_DISTRICT"],
             "province": os.environ["WZXY_PROVINCE"],
+            "sign_time" = int(round(time.time() * 1000)) #13位
+            "content" = f"陕西省_{t}_西安市"
+            "signature" = hashlib.sha256(content.encode('utf-8')).hexdigest()
             "township": os.environ["WZXY_TOWNSHIP"],
             "street": os.environ["WZXY_STREET"],
             "myArea": "",
